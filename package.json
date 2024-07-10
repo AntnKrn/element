@@ -6,7 +6,8 @@
     "build:dev": "webpack --env mode=development",
     "build:prod": "webpack --env mode=production",
     "start": "webpack serve --env mode=development",
-    "lint": "eslint . --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
+    "prepare": "husky"
   },
   "repository": "git@github.com:AntnKrn/element.git",
   "author": "Anton Kuryan <super.tosh2016@yandex.by>",
@@ -31,6 +32,8 @@
     "fork-ts-checker-webpack-plugin": "^9.0.2",
     "globals": "^15.8.0",
     "html-webpack-plugin": "^5.6.0",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
     "prettier": "^3.3.2",
     "react-refresh": "^0.14.2",
     "react-refresh-typescript": "^2.0.9",
@@ -44,5 +47,15 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "yarn lint"
+    ]
   }
 }
