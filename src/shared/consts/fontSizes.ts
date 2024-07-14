@@ -39,11 +39,3 @@ export const MOBILE_HEADING1 = new TypeFace(REGULAR, '20px', '27px', 'none');
 export const MOBILE_HEADING2 = new TypeFace(REGULAR, '16px', '27px', '10px');
 export const MOBILE_HEADING3 = new TypeFace(REGULAR, '14px', 'none', 'none');
 export const MOBILE_BODY_SMALL = new TypeFace(REGULAR, '12px', '20px', '10px');
-
-export const fdsafasd = `
-    font-family: DM Sans;
-    font-size: 33px;
-    font-weight: 500;
-    line-height: 43px;
-    text-align: left;
-`;
