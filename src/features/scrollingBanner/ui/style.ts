@@ -4,12 +4,15 @@ import { DESKTOP_BODY_SMALL, MOBILE_HEADING1 } from '@/shared/consts/fontSizes';
 import { MAX_WIDTH_XL } from '@/shared/consts/resolutionBreakpoints';
 
 const ScrollingBannerContainer = styled.div`
+  grid-column-start: 1;
+  grid-column-end: 3;
   overflow: hidden;
   height: 27.5px;
   background-color: black;
   color: white;
 
   @media ${MAX_WIDTH_XL} {
+    margin-top: 60px;
     height: 40px;
   }
 `;
