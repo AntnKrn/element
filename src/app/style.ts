@@ -19,6 +19,10 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
 
+  ul {
+    list-style-type: none;
+  }
+
   input, button {
     border: none;
     border-radius: 0;
