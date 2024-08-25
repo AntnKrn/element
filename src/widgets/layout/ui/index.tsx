@@ -11,14 +11,9 @@ export const Layout = () => {
       <Styled.Divider>
         <ScrollingBanner />
         <Header />
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: '16vw auto',
-          }}
-        >
+        <Styled.OutletWrapper>
           <Outlet />
-        </div>
+        </Styled.OutletWrapper>
       </Styled.Divider>
     </>
   );
