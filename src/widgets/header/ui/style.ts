@@ -5,6 +5,7 @@ import { MAX_WIDTH_XL } from '@/shared/consts/resolutionBreakpoints';
 
 export const StyledHeader = styled.header`
   position: fixed;
+  z-index: 1;
   height: 100vh;
   margin: 50px 0px 0px 50px;
 
@@ -23,6 +24,13 @@ export const HeaderContainer = styled.div`
   align-items: center;
   gap: 30px;
   justify-content: space-between;
+  position: relative;
+  z-index: 1;
+  background-color: none;
+
+  @media ${MAX_WIDTH_XL} {
+    background-color: white;
+  }
 `;
 
 export const Logo = styled.h1`
@@ -39,15 +47,24 @@ export const Navigation = styled.nav<{ $isOpen: boolean }>`
   flex-direction: column;
   gap: 4rem;
 
+  @keyframes slideNav {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   @media ${MAX_WIDTH_XL} {
     position: fixed;
     display: ${props => (props.$isOpen ? 'flex' : 'none')};
-    transition: transform 1s ease-in-out;
-    transform: ${props =>
-      props.$isOpen ? 'translateY(0)' : 'translateY(-100%)'};
+    padding: 0 0 70px 25px;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 60px);
+    animation: slideNav 0.5s ease-in-out;
     background-color: white;
+    overflow: scroll;
   }
 `;
 

@@ -14,7 +14,10 @@ export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const onClickMobileMenu = () => {
-    setIsOpen(prev => !prev);
+    setIsOpen(prev => {
+      document.body.style.overflow = prev ? 'scroll' : 'hidden';
+      return !prev;
+    });
   };
 
   return (
