@@ -21,6 +21,7 @@ export const BitImg = styled.img`
   object-fit: contain;
   width: 100%;
   height: 100%;
+  z-index: 0;
 `;
 
 export const BtnPlayOnImg = styled(PlaySVG)`
@@ -31,6 +32,7 @@ export const BtnPlayOnImg = styled(PlaySVG)`
   display: none;
   width: 30px;
   height: 30px;
+  z-index: 1;
 `;
 
 export const BitInfo = styled.div`
