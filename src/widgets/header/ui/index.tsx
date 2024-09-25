@@ -2,13 +2,7 @@ import { useState } from 'react';
 
 import { MobileMenu } from '@/shared/ui/mobileMenu';
 
-import {
-  HeaderContainer,
-  Logo,
-  Navigation,
-  ShoppingBag,
-  StyledHeader,
-} from './style';
+import { HeaderContainer, Logo, Navigation, StyledHeader } from './style';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,8 +17,8 @@ export const Header = () => {
   return (
     <StyledHeader>
       <HeaderContainer>
-        <Logo>ELEMENT</Logo>
-        <ShoppingBag />
+        <Logo>23BEATS</Logo>
+        {/* <ShoppingBag /> */}
         <MobileMenu onClickMobileMenu={onClickMobileMenu} isOpen={isOpen} />
       </HeaderContainer>
 
@@ -33,12 +27,9 @@ export const Header = () => {
           <li>2024</li>
           <li>2023</li>
           <li>2022</li>
-          <li>2021</li>
+          <li>23archive</li>
         </ul>
         <ul>
-          <li>element</li>
-          <li>about element</li>
-          <li>contacts</li>
           <li>TG / SOUNDCLOUD</li>
         </ul>
         <ul>

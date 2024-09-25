@@ -28,9 +28,6 @@ export const BitItem = (bit: IBitt) => {
       </ImgWrapper>
       <BitInfo>
         <span>Bit name</span>
-        <span>
-          <b>30</b> USD
-        </span>
       </BitInfo>
     </div>
   );

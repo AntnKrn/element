@@ -1,7 +1,7 @@
 import Styled from './style';
 
 const text =
-  'ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ELEMENT  •  ';
+  '23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  23BEATS  •  ';
 
 export const ScrollingBanner = () => {
   return (

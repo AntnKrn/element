@@ -6,7 +6,7 @@ import { MainMenuImg, Shop } from './style';
 export const MainPage = () => {
   return (
     <>
-      <MainMenuImg src="https://znyworldwide.com/image/catalog/2024/01-ss24/_main/SS24_summer_sale_afishi2-01.jpg" />
+      <MainMenuImg src="https://storage.googleapis.com/23beats/photo_2024-03-18_23-19-23.jpg" />
       <Shop>
         <BitList />
       </Shop>
