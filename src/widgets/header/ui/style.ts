@@ -77,3 +77,7 @@ export const ShoppingBag = styled(ShoppingBagSVG)`
     display: block;
   }
 `;
+
+export const ListElement = styled.li`
+  cursor: pointer;
+`;

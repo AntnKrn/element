@@ -5,7 +5,13 @@ import { MobileMenu } from '@/shared/ui/mobileMenu';
 
 import { changeYear } from '../model/yearSlice';
 
-import { HeaderContainer, Logo, Navigation, StyledHeader } from './style';
+import {
+  HeaderContainer,
+  ListElement,
+  Logo,
+  Navigation,
+  StyledHeader,
+} from './style';
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,16 +38,18 @@ export const Header = () => {
 
       <Navigation $isOpen={isOpen}>
         <ul>
-          <li onClick={() => onClickYear('2024')}>2024</li>
-          <li onClick={() => onClickYear('2023')}>2023</li>
-          <li onClick={() => onClickYear('2022')}>2022</li>
-          <li onClick={() => onClickYear('23archive')}>23archive</li>
+          <ListElement onClick={() => onClickYear('2024')}>2024</ListElement>
+          <ListElement onClick={() => onClickYear('2023')}>2023</ListElement>
+          <ListElement onClick={() => onClickYear('2022')}>2022</ListElement>
+          <ListElement onClick={() => onClickYear('23archive')}>
+            23archive
+          </ListElement>
         </ul>
         <ul>
-          <li>TG / SOUNDCLOUD</li>
+          <ListElement>TG / SOUNDCLOUD</ListElement>
         </ul>
         <ul>
-          <li>favorites</li>
+          <ListElement>favorites</ListElement>
         </ul>
       </Navigation>
     </StyledHeader>
