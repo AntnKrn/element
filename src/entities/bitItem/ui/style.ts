@@ -4,7 +4,7 @@ import PlaySVG from '@/shared/assets/icons/play.svg';
 
 export const ImgWrapper = styled.div`
   position: relative;
-  width: 100%;
+  height: 367px;
 
   &:hover {
     img {
@@ -18,7 +18,7 @@ export const ImgWrapper = styled.div`
 `;
 
 export const BitImg = styled.img`
-  object-fit: contain;
+  object-fit: fill;
   width: 100%;
   height: 100%;
   z-index: 0;

@@ -1,21 +1,30 @@
 import { useDispatch } from 'react-redux';
 
+import { getBeatNameFromFolderString } from '@/widgets/bitList/helpers/getBeatNameFromFolderString';
+
 import { changeCurrentPlayingBit } from '../model/bitSlice';
 
 import { BitImg, BitInfo, BtnPlayOnImg, ImgWrapper } from './style';
 
 interface IBitt {
-  bitsrc: string;
+  beatFolderSrc: string;
 }
 
 export const BitItem = (bit: IBitt) => {
   const dispatch = useDispatch();
+  const beatName = getBeatNameFromFolderString(bit.beatFolderSrc);
 
   const onClickPlay = () => {
+    console.log(beatName);
     dispatch(
       changeCurrentPlayingBit({
-        bitName: bit.bitsrc,
-        bitSrc: bit.bitsrc,
+        beatAudioSrc:
+          `https://storage.googleapis.com/23beats/${bit.beatFolderSrc}${beatName}` +
+          '.mp3',
+        beatImgSrc:
+          `https://storage.googleapis.com/23beats/${bit.beatFolderSrc}${beatName}` +
+          '.png',
+        beatName: beatName,
       }),
     );
   };
@@ -24,10 +33,15 @@ export const BitItem = (bit: IBitt) => {
     <div>
       <ImgWrapper>
         <BtnPlayOnImg onClick={onClickPlay} />
-        <BitImg src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_600,h_600/https://vinyl-record.ru/wp-content/uploads/2020/12/Disk-12-blc2-1-1.jpg" />
+        <BitImg
+          src={
+            `https://storage.googleapis.com/23beats/${bit.beatFolderSrc}${beatName}` +
+            '.png'
+          }
+        />
       </ImgWrapper>
       <BitInfo>
-        <span>Bit name</span>
+        <span>{beatName}</span>
       </BitInfo>
     </div>
   );

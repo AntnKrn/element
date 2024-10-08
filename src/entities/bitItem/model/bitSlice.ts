@@ -3,8 +3,9 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IBit } from './interfaces';
 
 const initialState: IBit = {
-  bitSrc: '',
-  bitName: '',
+  beatAudioSrc: '',
+  beatImgSrc: '',
+  beatName: '',
 };
 
 export const bitSlice = createSlice({
@@ -12,8 +13,9 @@ export const bitSlice = createSlice({
   initialState,
   reducers: {
     changeCurrentPlayingBit: (state, action: PayloadAction<IBit>) => {
-      state.bitName = action.payload.bitName;
-      state.bitSrc = action.payload.bitSrc;
+      state.beatAudioSrc = action.payload.beatAudioSrc;
+      state.beatImgSrc = action.payload.beatImgSrc;
+      state.beatName = action.payload.beatName;
     },
   },
 });

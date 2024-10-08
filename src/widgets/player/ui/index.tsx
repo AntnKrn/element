@@ -23,17 +23,17 @@ export const Player = () => {
   const [bitDuration, setBitDuration] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
-  const currentBit = useSelector((state: RootState) => state.currentBit);
+  const currentBeat = useSelector((state: RootState) => state.currentBit);
 
   useEffect(() => {
-    if (currentBit.bitName !== '') {
+    if (currentBeat.beatName !== '') {
       audioRef.current.play();
     }
     return () => {
       audioRef.current.pause();
       setIsPaused(false);
     };
-  }, [currentBit.bitName]);
+  }, [currentBeat.beatName]);
 
   const onLoadedMetadataHandler = () => {
     setBitDuration(audioRef.current.duration);
@@ -58,7 +58,7 @@ export const Player = () => {
       prevIsPaused ? audioRef.current.play() : audioRef.current.pause();
       return !prevIsPaused;
     };
-    if (currentBit.bitName !== '') {
+    if (currentBeat.beatName !== '') {
       setIsPaused(prev => setPauseOrPlay(prev));
     }
   };
@@ -82,11 +82,11 @@ export const Player = () => {
   };
   return (
     <>
-      {currentBit.bitName === '' ? null : (
+      {currentBeat.beatName === '' ? null : (
         <PlayerWrapper>
           <Description>
-            <PlayerImg src="https://sp-ao.shortpixel.ai/client/q_glossy,ret_img,w_600,h_600/https://vinyl-record.ru/wp-content/uploads/2020/12/Disk-12-blc2-1-1.jpg" />
-            <span>Bit name</span>
+            <PlayerImg src={currentBeat.beatImgSrc} />
+            <span>{currentBeat.beatName}</span>
           </Description>
           <PlayersButtons>
             <RewindMinus onClick={onClickRewindMinus} />
@@ -99,7 +99,7 @@ export const Player = () => {
           <audio
             ref={audioRef}
             preload="metadata"
-            src={currentBit.bitSrc}
+            src={currentBeat.beatAudioSrc}
             onLoadedMetadata={onLoadedMetadataHandler}
             onAbortCapture={() => {}}
             onTimeUpdate={onTimeUpdateHandler}

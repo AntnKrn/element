@@ -1,4 +1,5 @@
 export interface IBit {
-  readonly bitName: string;
-  readonly bitSrc: string;
+  readonly beatAudioSrc: string;
+  readonly beatImgSrc: string;
+  readonly beatName: string;
 }
