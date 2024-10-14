@@ -13,7 +13,7 @@ export const BitList = () => {
   console.log(currentYear);
   useEffect(() => {
     const getBeats = async (year: IYear) => {
-      fetch('http://localhost:8080/tracks/' + year.year)
+      fetch('http://192.168.0.101:81/tracks/' + year.year)
         .then(res => {
           return res.json();
         })

@@ -5,7 +5,7 @@ import { MAX_WIDTH_XL } from '@/shared/consts/resolutionBreakpoints';
 
 export const StyledHeader = styled.header`
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   height: 100vh;
   margin: 50px 0px 0px 50px;
 
@@ -25,7 +25,7 @@ export const HeaderContainer = styled.div`
   gap: 30px;
   justify-content: space-between;
   position: relative;
-  z-index: 1;
+  z-index: 2;
   background-color: none;
 
   @media ${MAX_WIDTH_XL} {
@@ -80,4 +80,11 @@ export const ShoppingBag = styled(ShoppingBagSVG)`
 
 export const ListElement = styled.li`
   cursor: pointer;
+`;
+
+export const Link = styled.a`
+  &,
+  &:visited {
+    color: black;
+  }
 `;

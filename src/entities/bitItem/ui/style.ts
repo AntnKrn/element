@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 import PlaySVG from '@/shared/assets/icons/play.svg';
+import { MAX_WIDTH_SM } from '@/shared/consts/resolutionBreakpoints';
 
 export const ImgWrapper = styled.div`
   position: relative;
@@ -14,6 +15,10 @@ export const ImgWrapper = styled.div`
     svg {
       display: block;
     }
+  }
+
+  @media ${MAX_WIDTH_SM} {
+    height: 200px;
   }
 `;
 
@@ -40,4 +45,8 @@ export const BitInfo = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 10px;
+`;
+
+export const BeatWrapper = styled.div`
+  padding: 15px;
 `;

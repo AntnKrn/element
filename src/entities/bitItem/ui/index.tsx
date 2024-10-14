@@ -4,7 +4,13 @@ import { getBeatNameFromFolderString } from '@/widgets/bitList/helpers/getBeatNa
 
 import { changeCurrentPlayingBit } from '../model/bitSlice';
 
-import { BitImg, BitInfo, BtnPlayOnImg, ImgWrapper } from './style';
+import {
+  BeatWrapper,
+  BitImg,
+  BitInfo,
+  BtnPlayOnImg,
+  ImgWrapper,
+} from './style';
 
 interface IBitt {
   beatFolderSrc: string;
@@ -15,7 +21,6 @@ export const BitItem = (bit: IBitt) => {
   const beatName = getBeatNameFromFolderString(bit.beatFolderSrc);
 
   const onClickPlay = () => {
-    console.log(beatName);
     dispatch(
       changeCurrentPlayingBit({
         beatAudioSrc:
@@ -30,7 +35,7 @@ export const BitItem = (bit: IBitt) => {
   };
 
   return (
-    <div>
+    <BeatWrapper>
       <ImgWrapper>
         <BtnPlayOnImg onClick={onClickPlay} />
         <BitImg
@@ -43,6 +48,6 @@ export const BitItem = (bit: IBitt) => {
       <BitInfo>
         <span>{beatName}</span>
       </BitInfo>
-    </div>
+    </BeatWrapper>
   );
 };

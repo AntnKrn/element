@@ -7,6 +7,7 @@ import { changeYear } from '../model/yearSlice';
 
 import {
   HeaderContainer,
+  Link,
   ListElement,
   Logo,
   Navigation,
@@ -26,6 +27,10 @@ export const Header = () => {
 
   const onClickYear = (chosenYear: string) => {
     dispatch(changeYear({ year: chosenYear }));
+    setIsOpen(prev => {
+      document.body.style.overflow = 'scroll';
+      return !prev;
+    });
   };
 
   return (
@@ -46,7 +51,15 @@ export const Header = () => {
           </ListElement>
         </ul>
         <ul>
-          <ListElement>TG / SOUNDCLOUD</ListElement>
+          <ListElement>
+            <Link href="https://t.me/rrelement1" target="_blank">
+              TG
+            </Link>{' '}
+            /{' '}
+            <Link href="https://soundcloud.com/rrelement" target="_blank">
+              SOUNDCLOUD
+            </Link>
+          </ListElement>
         </ul>
         <ul>
           <ListElement>favorites</ListElement>
